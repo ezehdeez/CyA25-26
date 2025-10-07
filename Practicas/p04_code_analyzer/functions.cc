@@ -21,13 +21,6 @@
 
 #include "functions.h"
 
-const std::regex variable_regex(R"(^\s*(int|double)\s+(\w+)\s?((=)\s?(\d+(.\d+)?))?;$)");
-const std::regex statement_regex(R"(^\s*(while|for)[\s\S]*$)");
-const std::regex single_line_regex(R"(^\/\/[\w\W]*?$)");
-const std::regex multi_start_regex(R"(^\/\*[\w\W]*$)");
-const std::regex multi_end_regex(R"(^[\w\W]*\*\/$)");
-const std::regex main_regex(R"(^int main([\s\S]*)\W*\{$)");
-
 /**
  * @brief This functions checks if the given number of arguments is ok.
  * 
@@ -36,8 +29,8 @@ const std::regex main_regex(R"(^int main([\s\S]*)\W*\{$)");
  */
 void CheckCorrectParameters(int argc, const int kCorrectNumber) {
   if(argc != kCorrectNumber) {
-    std::cerr << "Modo de empleo: ./p02_strings <input_file> <output_file> opcode\n"
-    << "Pruebe './p02_strings --help' para más información" << std::endl;
+    std::cerr << "Modo de empleo: ./p04_code_structure <input_file> <output_file>\n"
+    << "Pruebe './p04_code_analyzer --help' para más información" << std::endl;
     exit(1);
   }
 }
@@ -68,45 +61,8 @@ void FileCheck(std::ifstream& input_file, std::ofstream& output_file) {
 void HelpMessage(char* argv[]) {
   if(std::string(argv[1]) == "--help") {
     std::cout << "Este programa aceptará como parámetros un primer archivo de entrada" <<
-    ".txt, un segundo archivo de salida .txt y un código de operación (opcode).\n" <<
-    "Modo de empleo: ./p02_strings <input_file> <output_file> opcode\n\n" <<
-    "Códigos de operación:\n" <<
-    "\t[1] Alfabeto -> Escribe en el fichero salida el alfabeto de cada una de las cadenas de entrada.\n" <<
-    "\t[2] Longitud -> Escribe en el fichero de salida la longitud de cada una de las cadenas de entrada.\n"
-    "\t[3] Inversa -> Escribe en el fichero de salida la inversa de cada una de las cadenas de entrada.\n"
-    "\t[4] Prefijos -> Escribe en el fichero de salida todos los prefijos de sus cadenas correspondientes.\n"
-    "\t[5] Sufijos -> Escribe en el fichero de salida todos los sufijos de sus cadenas correspondientes.\n" << std::endl;
+    "de código en C++ y un segundo archivo de salida .txt.\n" <<
+    "Modo de empleo: ./p04_code_analyzer <input_file> <output_file>" << std::endl;
     exit(1);
-  }
-}
-
-void FillCodeStructure(std::ifstream& input_file, CodeStructure& code_structure) {
-  std::string line;
-  int line_counter = 0;
-  bool first_comment = true;
-  while(std::getline(input_file, line)) {
-    line_counter++;
-    std::smatch matches;
-    if(std::regex_search(line, matches, variable_regex)) {
-      code_structure.AddVariable(Variable (line_counter, matches));
-    } else if(std::regex_search(line, matches, statement_regex)) {
-      code_structure.AddStatement(Statement (line_counter, matches));
-    } else if(std::regex_search(line, matches, single_line_regex)) {
-      code_structure.AddComment(Comment (line_counter, line_counter, matches, false));
-    } else if(std::regex_search(line, matches, multi_start_regex)) {
-      int start = line_counter;
-      std::string comment_content = line;
-      while(std::getline(input_file, line)) {
-        line_counter++;
-        comment_content += "\n" + line;
-        if(std::regex_search(line, matches, multi_end_regex)) {
-          break;
-        }
-      }
-      code_structure.AddComment(Comment (start, line_counter, comment_content, true, first_comment));
-      first_comment = false;
-    } else if(std::regex_search(line, matches, main_regex)) {
-      code_structure.setMain(true);
-    }
   }
 }

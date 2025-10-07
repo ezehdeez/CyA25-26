@@ -9,7 +9,7 @@
  * @file loop.h
  * @author Ezequiel Hernández Poleo (alu0101735399@ull.edu.es)
  * @date 2025-10-05
- * @brief 
+ * @brief This file contains the Statement class declaration
  */
 
 #pragma once
@@ -19,12 +19,17 @@
 
 class Statement{
  public:
+
+  // Constructors
+  Statement() = default;
   Statement(const int line, const std::smatch& content) : line_{line}, 
   statement_type_{content[1]} {};
   /**
    *      ^\s*(while|for)[\s\S]*$   REGEX
    * content[1] -> loop type (for|while)
    */
+
+   // Getters
   int getLine() {return line_;}
   std::string getTypeStr() {return statement_type_;}
  private:

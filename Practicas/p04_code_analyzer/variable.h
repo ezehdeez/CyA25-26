@@ -9,7 +9,7 @@
  * @file variable.h
  * @author Ezequiel Hernández Poleo (alu0101735399@ull.edu.es)
  * @date 2025-10-05
- * @brief 
+ * @brief This file contains the Variable class declaration.
  */
 
 #pragma once
@@ -20,8 +20,12 @@
 
 class Variable {
  public:
-  // Variable() = default;
+
+  // Constructors
+  Variable() = default;
   Variable(const int line, const std::smatch& content);
+
+  // Getters
   int getLine() const {return line_;}
   std::string getValue() const {return value_;}
   std::string getVarName() const {return var_name_;}

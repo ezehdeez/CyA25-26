@@ -21,4 +21,3 @@ void CheckCorrectParameters(int argc, const int kCorrectNumber);
 void FileCheck(std::ifstream& input_file, std::ofstream& output_file);
 void HelpMessage(char* argv[]);
 void OpSelector(std::ifstream& input_file, std::ofstream& output_file, int opcode);
-void FillCodeStructure(std::ifstream& input_file, CodeStructure& code_structure);

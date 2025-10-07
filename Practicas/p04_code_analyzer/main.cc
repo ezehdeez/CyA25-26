@@ -9,7 +9,12 @@
  * @file main.cc
  * @author Ezequiel Hernández Poleo (alu0101735399@ull.edu.es)
  * @date 2025-10-05
- * @brief 
+ * @brief Main program which takes as parameter two files, and analyzes the first
+ *        one (it should be a C++ code) to extracts the most important information
+ *        about the code such as if it has a main function or a description. It
+ *        also lists every variable, statement or comment in the code.
+ * 
+ *        Usage: /p04_code_analyzer example.cc out.txt
  */
 
 #include <fstream>
@@ -26,7 +31,7 @@ int main(int argc, char* argv[]) {
   FileCheck(input_file, output_file);
   std::string input_file_name(argv[1]);
   CodeStructure code_structure(input_file_name);
-  FillCodeStructure(input_file, code_structure);
+  code_structure.FillCodeStructure(input_file);
   output_file << code_structure;
   return 0;
 }
