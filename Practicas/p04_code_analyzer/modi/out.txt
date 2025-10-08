@@ -12,16 +12,19 @@ DESCRIPTION:
 */
 
 VARIABLES: 
-[Line 22] INT: factorial = 1
-[Line 32] INT: limit
+[Line 28] INT: factorial = 1
+[Line 38] INT: limit
 
 STATEMENTS: 
-[Line 23] LOOP: for
-[Line 34] LOOP: for
+[Line 29] LOOP: for
+[Line 40] LOOP: for
+
+CLASSES: 
+ABC: Líneas 15-19
 
 MAIN: 
 True
 
 COMMENTS: 
 [Line 1-10] DESCRIPTION
-[Line 15] // Returns the factorial of the argument
+[Line 21] // Returns the factorial of the argument
