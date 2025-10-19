@@ -6,16 +6,16 @@
  * @subject: CyA 25-26
  *           P06 - Diseño e implemetación de un simulador de autómatas finitos
  * 
- * @file automata.cc
+ * @file automaton.cc
  * @author Ezequiel Hernández Poleo (alu0101735399@ull.edu.es)
  * @date 2025-10-16
  * @brief 
  */
 
-#include "../lib/automata.h"
+#include "../lib/automaton.h"
 
 //TODO EpsilonClosure
-std::set<int> Automata::EpsilonClosure(const std::set<int>& states) {
+std::set<int> Automaton::EpsilonClosure(const std::set<int>& states) {
   for(int state : states) {
     for(auto symbol : getStates().at(state).getTransitions()) {
       

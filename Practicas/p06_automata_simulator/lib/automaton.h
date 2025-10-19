@@ -6,7 +6,7 @@
  * @subject: CyA 25-26
  *           P06 - Diseño e implemetación de un simulador de autómatas finitos
  * 
- * @file automata.h
+ * @file automaton.h
  * @author Ezequiel Hernández Poleo (alu0101735399@ull.edu.es)
  * @date 2025-10-16
  * @brief 
@@ -23,9 +23,9 @@
 
 const char EMPTY_STRING = '&';
 
-class Automata{
+class Automaton{
  public:
-  Automata(const Alphabet& alphabet, const int starter_state, const int num_states, 
+  Automaton(const Alphabet& alphabet, const int starter_state, const int num_states, 
   const std::map<int, State>& states) : alphabet_{alphabet}, starter_state_{starter_state},
   num_states_{num_states}, states_{states} {}
   std::set<int> EpsilonClosure(const std::set<int>& states);

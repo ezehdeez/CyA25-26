@@ -44,17 +44,17 @@ include_directories(${PROJECT_SOURCE_DIR}/src)
 add_executable(p06_automata_simulator
     src/main.cc
     src/functions.cc
-    src/automata.cc
+    src/automaton.cc
     src/alphabet.cc
     src/chain.cc
     src/state.cc
-    src/automata_loader.cc
+    src/automaton_loader.cc
     lib/functions.h
-    lib/automata.h
+    lib/automaton.h
     lib/alphabet.h
     lib/chain.h
     lib/state.h
-    lib/automata_loader.h
+    lib/automaton_loader.h
 )
 
 # Add expected compiler features to a target.
