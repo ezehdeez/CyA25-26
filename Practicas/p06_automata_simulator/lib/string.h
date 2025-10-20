@@ -6,47 +6,42 @@
  * @subject: CyA 25-26
  *           P06 - Diseño e implemetación de un simulador de autómatas finitos
  * 
- * @file cadena.h
+ * @file string.h
  * @author Ezequiel Hernández Poleo (alu0101735399@ull.edu.es)
  * @date 2025-10-16
  * @brief 
  */
 
-#ifndef CHAIN_H_
-#define CHAIN_H_
+#pragma once
 
 #include <string>
 #include "alphabet.h"
 
 typedef char symbol;
 
-class Language;
-
-class Chain {
+class String{
  public:
   // Default constructor 
-  Chain() : alphabet_{Alphabet ("")}, chain_{"&"}, size_{0} {}
+  String() : alphabet_{Alphabet ("")}, string_{"&"}, size_{0} {}
   // Constructor from a string and an alphabet
-  Chain(const std::string& string, const Alphabet& alphabet) : alphabet_(alphabet), 
-  chain_(string), size_(string.size()) {}
+  String(const std::string& string, const Alphabet& alphabet) : alphabet_(alphabet), 
+  string_(string), size_(string.size()) {}
   // Copy constructor
-  Chain(const Chain& chain) : alphabet_{chain.alphabet_}, chain_{chain.chain_}, 
-  size_{chain.size_} {}
+  String(const String& string) : alphabet_{string.alphabet_}, string_{string.string_}, 
+  size_{string.size_} {}
   // Getters
   size_t getSize() const {return size_;}
-  std::string getChain() const {return chain_;}
+  std::string getString() const {return string_;}
   Alphabet getAlphabet() const {return alphabet_;}
   // Methods
-  Chain Inverse();
+  String Inverse();
   
-  bool operator<(const Chain& other) const; 
+  bool operator<(const String& other) const; 
  private:
   Alphabet alphabet_;
-  std::string chain_;
+  std::string string_;
   size_t size_;
 };
 
-Chain operator+(Chain& chain1, Chain& chain2);
-std::ostream& operator<<(std::ostream& out, const Chain& chain);
-
-#endif
+String operator+(String& String1, String& String2);
+std::ostream& operator<<(std::ostream& out, const String& String);

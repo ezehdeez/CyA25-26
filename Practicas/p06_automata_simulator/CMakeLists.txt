@@ -46,13 +46,13 @@ add_executable(p06_automata_simulator
     src/functions.cc
     src/automaton.cc
     src/alphabet.cc
-    src/chain.cc
+    src/string.cc
     src/state.cc
     src/automaton_loader.cc
     lib/functions.h
     lib/automaton.h
     lib/alphabet.h
-    lib/chain.h
+    lib/string.h
     lib/state.h
     lib/automaton_loader.h
 )

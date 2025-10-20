@@ -19,7 +19,7 @@
 
 #include "../lib/alphabet.h"
 #include "../lib/state.h"
-#include "../lib/chain.h"
+#include "../lib/string.h"
 
 const char EMPTY_STRING = '&';
 
@@ -28,12 +28,13 @@ class Automaton{
   Automaton(const Alphabet& alphabet, const int starter_state, const int num_states, 
   const std::map<int, State>& states) : alphabet_{alphabet}, starter_state_{starter_state},
   num_states_{num_states}, states_{states} {}
+  std::set<int> EpsilonClosure(const int state);
   std::set<int> EpsilonClosure(const std::set<int>& states);
   Alphabet getAlphabet() const {return alphabet_;}
   int getStarterState() const {return starter_state_;}
   int getNumStates() const {return num_states_;}
   std::map<int, State> getStates() const {return states_;}
-  bool StringBelongs(const Chain& string); //TODO Most important method
+  bool VerifyString(const String& string); //TODO Most important method
  private:
   Alphabet alphabet_;
   int starter_state_;
