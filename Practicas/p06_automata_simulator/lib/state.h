@@ -16,6 +16,7 @@
 
 class State{
  public:
+  State() = default;
   State(int state, bool is_aceptation, int num_transitions) : state_{state}, 
   is_aceptation_{is_aceptation}, num_transitions_{num_transitions}, transitions_{} {}
   void InsertTransition(char symbol, int state) {transitions_.insert({symbol, state});}

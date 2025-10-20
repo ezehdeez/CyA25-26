@@ -20,7 +20,6 @@
 #include "../lib/state.h"
 
 AutomatonLoader::AutomatonData AutomatonLoader::Loader(const std::string& file_name) {
-  std::cout << "Entrada al loader" << std::endl;
   std::ifstream input_file{file_name};
   std::string line;
   std::map<int, State> states;
@@ -46,6 +45,5 @@ AutomatonLoader::AutomatonData AutomatonLoader::Loader(const std::string& file_n
     }
     states.insert({state_name, state});
   }
-  std::cout << "Salida del loader" << std::endl;
   return AutomatonData(states, starter_state, num_states, alphabet);
 }

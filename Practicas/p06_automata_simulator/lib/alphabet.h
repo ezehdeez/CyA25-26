@@ -28,6 +28,7 @@ class Alphabet {
   Alphabet(const std::string& alphabet);
   // Set getter
   std::set<symbol> getSet() const {return alphabet_;}
+  bool CheckSymbol(symbol symbol);
  private:
   std::set<symbol> alphabet_;
 };

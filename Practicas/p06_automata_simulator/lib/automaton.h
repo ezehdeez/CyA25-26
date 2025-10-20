@@ -19,7 +19,6 @@
 
 #include "../lib/alphabet.h"
 #include "../lib/state.h"
-#include "../lib/string.h"
 
 const char EMPTY_STRING = '&';
 
@@ -34,7 +33,7 @@ class Automaton{
   int getStarterState() const {return starter_state_;}
   int getNumStates() const {return num_states_;}
   std::map<int, State> getStates() const {return states_;}
-  bool VerifyString(const String& string); //TODO Most important method
+  bool VerifyString(const std::string& string); //TODO Most important method
  private:
   Alphabet alphabet_;
   int starter_state_;

@@ -24,7 +24,7 @@ std::set<int> Automaton::EpsilonClosure(const int state) {
   while(!stack.empty()) {
     int current = stack.top();
     stack.pop();
-    std::pair<std::multimap<symbol, int>::const_iterator, std::multimap<symbol, int>::const_iterator> epsilon_range = states_[state].getTransitions().equal_range(EMPTY_STRING);
+    std::pair<std::multimap<symbol, int>::const_iterator, std::multimap<symbol, int>::const_iterator> epsilon_range = states_[current].getTransitions().equal_range(EMPTY_STRING);
     for(auto it = epsilon_range.first; it != epsilon_range.second; it++) {
       int next = it->second;
       if(visited.find(next) == visited.end()) continue;
@@ -44,6 +44,32 @@ std::set<int> Automaton::EpsilonClosure(const std::set<int>& states) {
   return full_closure;
 }
 
-bool Automaton::VerifyString(const String& string) {
-
+bool Automaton::VerifyString(const std::string& string) {
+  std::set<int> current_states;
+  current_states.insert(starter_state_);
+  current_states = EpsilonClosure(current_states);
+  for(symbol c : string) {
+    if(c == EMPTY_STRING) continue;
+    if(alphabet_.CheckSymbol(c)) {
+      return false;
+    }
+    std::set<int> new_states;
+    for(int state : current_states) {
+      std::multimap<symbol, int> transitions = states_[state].getTransitions();
+      std::pair<std::multimap<symbol, int>::const_iterator, std::multimap<symbol, int>::const_iterator> range = transitions.equal_range(c);
+      for(auto it = range.first; it != range.second; it++) {
+        new_states.insert(it->second);
+      }
+    }
+    if(new_states.empty()) {
+      return false;
+    }
+    current_states = EpsilonClosure(new_states);
+  }
+  for(int state : current_states) {
+    if(states_[state].getIsAceptation()) {
+      return true;
+    }
+  }
+  return false;
 }

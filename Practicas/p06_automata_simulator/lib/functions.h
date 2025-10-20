@@ -16,6 +16,9 @@
 
 #include <fstream>
 
+#include "../lib/automaton.h"
+
 void CheckCorrectParameters(int argc, const int kCorrectNumber);
-void FileCheck(std::ifstream& input_file, std::ifstream& input_fa);
+void FileCheck(const std::string& input_file_name, const std::string& input_fa_name);
 void HelpMessage(char* argv[]);
+void PrintStringBelongsToFA(const std::string& input_file_name, Automaton& automaton);
