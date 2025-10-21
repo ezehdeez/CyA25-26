@@ -5,7 +5,7 @@
  * 
  * @subject: 
  * 
- * @file automata_loader.cc
+ * @file automaton_loader.cc
  * @author Ezequiel Hernández Poleo (alu0101735399@ull.edu.es)
  * @date 2025-10-17
  * @brief 
@@ -16,11 +16,10 @@
 #include <string>
 #include <sstream>
 
-#include "../lib/automata_loader.h"
+#include "../lib/automaton_loader.h"
 #include "../lib/state.h"
 
-AutomataLoader::AutomataData AutomataLoader::Loader(const std::string& file_name) {
-  std::cout << "Entrada al loader" << std::endl;
+AutomatonLoader::AutomatonData AutomatonLoader::Loader(const std::string& file_name) {
   std::ifstream input_file{file_name};
   std::string line;
   std::map<int, State> states;
@@ -46,6 +45,5 @@ AutomataLoader::AutomataData AutomataLoader::Loader(const std::string& file_name
     }
     states.insert({state_name, state});
   }
-  std::cout << "Salida del loader" << std::endl;
-  return AutomataData(states, starter_state, num_states, alphabet);
+  return AutomatonData(states, starter_state, num_states, alphabet);
 }

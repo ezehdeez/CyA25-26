@@ -14,6 +14,7 @@
 
 #include <fstream>
 #include <string>
+
 #include "../lib/alphabet.h"
 
 typedef char symbol;
@@ -45,4 +46,8 @@ std::ostream& operator<<(std::ostream& out, const Alphabet& alphabet) {
   }
   out << "}";
   return out;
+}
+
+bool Alphabet::CheckSymbol(symbol symbol) {
+  return alphabet_.find(symbol) == alphabet_.end();
 }

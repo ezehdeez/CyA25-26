@@ -39,7 +39,9 @@ void CheckCorrectParameters(int argc, const int kCorrectNumber) {
  * @param input_file 
  * @param input_fa
  */
-void FileCheck(std::ifstream& input_file, std::ifstream& input_fa) {
+void FileCheck(const std::string& input_file_name, const std::string& input_fa_name) {
+  std::ifstream input_file{input_file_name};
+  std::ifstream input_fa{input_fa_name};
   if(!input_file) {
     std::cout << "El archivo de entrada no se ha podido leer correctamente." << std::endl;
     // exit(1);
@@ -67,5 +69,13 @@ void HelpMessage(char* argv[]) {
     " cadena por línea) sobre el alfabeto del autómata especificado en el primero\n\t  de los"
     " ficheros.\n" << std::endl;
     exit(1);
+  }
+}
+
+void PrintStringBelongsToFA(const std::string& input_file_name, Automaton& automaton) {
+  std::ifstream input_file{input_file_name};
+  std::string string;
+  while(input_file >> string) {
+    std::cout << string << " --- " << (automaton.VerifyString(string) ? "Accepted" : "Rejected") << std::endl;
   }
 }
