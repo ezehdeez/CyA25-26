@@ -9,7 +9,10 @@
  * @file state.h
  * @author Ezequiel Hernández Poleo (alu0101735399@ull.edu.es)
  * @date 2025-10-16
- * @brief 
+ * @brief State class declaration, it stores the state identification number, if
+ *        it is an aceptation state, the number of transitions and a multimap to
+ *        store every transition (symbol and objective state). It also contains 
+ *        a few methods, being the most important and used the InsertTransition().
  */
 
 #pragma once

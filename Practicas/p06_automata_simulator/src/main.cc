@@ -9,7 +9,11 @@
  * @file main.cc
  * @author Ezequiel Hernández Poleo (alu0101735399@ull.edu.es)
  * @date 2025-10-16
- * @brief 
+ * @brief This program will take two files as parameters, a Finite Automaton as a
+ *        .fa file, and an input file. The Finite Automaton will be simulated, and
+ *        the strings in the input file are the tests to the Automaton. The program
+ *        will print for every single string if it is accepted or rejected by
+ *        the automaton.
  */
 
 #include <iostream>

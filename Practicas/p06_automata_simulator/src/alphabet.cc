@@ -48,6 +48,12 @@ std::ostream& operator<<(std::ostream& out, const Alphabet& alphabet) {
   return out;
 }
 
+/**
+ * @brief It checks if a symbol belongs to the alphabet.
+ * 
+ * @param symbol 
+ * @return bool 
+ */
 bool Alphabet::CheckSymbol(symbol symbol) {
   return alphabet_.find(symbol) == alphabet_.end();
 }

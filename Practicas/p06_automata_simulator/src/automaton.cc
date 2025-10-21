@@ -9,13 +9,21 @@
  * @file automaton.cc
  * @author Ezequiel Hernández Poleo (alu0101735399@ull.edu.es)
  * @date 2025-10-16
- * @brief 
+ * @brief Automaton class inicialization.
  */
 
 #include <stack>
 
 #include "../lib/automaton.h"
 
+/**
+ * @brief It uses a stack to check for every state if it has epsilon transitions
+ *        in it, every available state without consuming a single symbol will be
+ *        stored in the returned set. 
+ * 
+ * @param state 
+ * @return std::set<int> 
+ */
 std::set<int> Automaton::EpsilonClosure(const int state) {
   std::stack<int> stack;
   std::set<int> visited;
@@ -35,6 +43,12 @@ std::set<int> Automaton::EpsilonClosure(const int state) {
   return visited;
 }
 
+/**
+ * @brief EpsilonClosure adapted for a set of states instead of a single state.
+ * 
+ * @param states 
+ * @return std::set<int> 
+ */
 std::set<int> Automaton::EpsilonClosure(const std::set<int>& states) {
   std::set<int> full_closure;
   for(int state : states) {
@@ -44,6 +58,20 @@ std::set<int> Automaton::EpsilonClosure(const std::set<int>& states) {
   return full_closure;
 }
 
+/**
+ * @brief This method check for every symbol in a string if it belongs to the
+ *        automaton. Firstly it checks if the symbol belongs to the alphabet, then
+ *        checks for every of the current states if any new state can be reached
+ *        with the symbol, if it can, this state will be added to the new states
+ *        for the next iteration. After every iteration we add EpsilonClosure of
+ *        the new_states to current states, with this we update the set to advance
+ *        in the algorithm. If any of the states in new_states when the algorithm 
+ *        finish is an aceptation state, the string belongs to the language
+ *        represented by the automaton.
+ * 
+ * @param string 
+ * @return bool 
+ */
 bool Automaton::VerifyString(const std::string& string) {
   std::set<int> current_states;
   current_states.insert(starter_state_);

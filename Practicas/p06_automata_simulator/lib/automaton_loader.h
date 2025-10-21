@@ -9,7 +9,9 @@
  * @file automaton_loader.h
  * @author Ezequiel Hernández Poleo (alu0101735399@ull.edu.es)
  * @date 2025-10-17
- * @brief 
+ * @brief AutomatonLoader class declaration which is used to extract the data
+ *        of the automaton from a .fa file, to be subsequently inserte into the
+ *        automaton object.
  */
 
 #pragma once

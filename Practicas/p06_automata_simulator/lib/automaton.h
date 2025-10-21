@@ -9,7 +9,14 @@
  * @file automaton.h
  * @author Ezequiel Hernández Poleo (alu0101735399@ull.edu.es)
  * @date 2025-10-16
- * @brief 
+ * @brief Automaton class declaration which stores an alphabet, the starter 
+ *        state, the number of states and map which contains the states and their
+ *        identification number. As important features of this class, it can check
+ *        if a string belongs to the language represented by the automaton. To
+ *        do that it also needs an EpsilonClosure method, which it is overloaded
+ *        just because the main function is the one which receives a single state,
+ *        and the other uses the single state EpsilonClosure to iterate through
+ *        a set.
  */
 
 #pragma once

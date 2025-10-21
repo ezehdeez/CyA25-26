@@ -72,6 +72,13 @@ void HelpMessage(char* argv[]) {
   }
 }
 
+/**
+ * @brief Prints for every string in the input file if it is accepted or rejected
+ *        by the automaton.
+ * 
+ * @param input_file_name 
+ * @param automaton 
+ */
 void PrintStringBelongsToFA(const std::string& input_file_name, Automaton& automaton) {
   std::ifstream input_file{input_file_name};
   std::string string;

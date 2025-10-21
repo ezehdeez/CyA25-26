@@ -1,0 +1,44 @@
+[
+{
+  "directory": "/home/usuario/CyA/build",
+  "command": "/usr/bin/c++  -I/home/usuario/CyA/Practicas/p06_automata_simulator/src -g -O0 -Wall -Wextra -Wpedantic -Weffc++ -std=gnu++17 -Wall -Wextra -Wpedantic -Weffc++ -o CMakeFiles/p06_automata_simulator.dir/src/main.cc.o -c /home/usuario/CyA/Practicas/p06_automata_simulator/src/main.cc",
+  "file": "/home/usuario/CyA/Practicas/p06_automata_simulator/src/main.cc",
+  "output": "CMakeFiles/p06_automata_simulator.dir/src/main.cc.o"
+},
+{
+  "directory": "/home/usuario/CyA/build",
+  "command": "/usr/bin/c++  -I/home/usuario/CyA/Practicas/p06_automata_simulator/src -g -O0 -Wall -Wextra -Wpedantic -Weffc++ -std=gnu++17 -Wall -Wextra -Wpedantic -Weffc++ -o CMakeFiles/p06_automata_simulator.dir/src/functions.cc.o -c /home/usuario/CyA/Practicas/p06_automata_simulator/src/functions.cc",
+  "file": "/home/usuario/CyA/Practicas/p06_automata_simulator/src/functions.cc",
+  "output": "CMakeFiles/p06_automata_simulator.dir/src/functions.cc.o"
+},
+{
+  "directory": "/home/usuario/CyA/build",
+  "command": "/usr/bin/c++  -I/home/usuario/CyA/Practicas/p06_automata_simulator/src -g -O0 -Wall -Wextra -Wpedantic -Weffc++ -std=gnu++17 -Wall -Wextra -Wpedantic -Weffc++ -o CMakeFiles/p06_automata_simulator.dir/src/automata.cc.o -c /home/usuario/CyA/Practicas/p06_automata_simulator/src/automata.cc",
+  "file": "/home/usuario/CyA/Practicas/p06_automata_simulator/src/automata.cc",
+  "output": "CMakeFiles/p06_automata_simulator.dir/src/automata.cc.o"
+},
+{
+  "directory": "/home/usuario/CyA/build",
+  "command": "/usr/bin/c++  -I/home/usuario/CyA/Practicas/p06_automata_simulator/src -g -O0 -Wall -Wextra -Wpedantic -Weffc++ -std=gnu++17 -Wall -Wextra -Wpedantic -Weffc++ -o CMakeFiles/p06_automata_simulator.dir/src/alphabet.cc.o -c /home/usuario/CyA/Practicas/p06_automata_simulator/src/alphabet.cc",
+  "file": "/home/usuario/CyA/Practicas/p06_automata_simulator/src/alphabet.cc",
+  "output": "CMakeFiles/p06_automata_simulator.dir/src/alphabet.cc.o"
+},
+{
+  "directory": "/home/usuario/CyA/build",
+  "command": "/usr/bin/c++  -I/home/usuario/CyA/Practicas/p06_automata_simulator/src -g -O0 -Wall -Wextra -Wpedantic -Weffc++ -std=gnu++17 -Wall -Wextra -Wpedantic -Weffc++ -o CMakeFiles/p06_automata_simulator.dir/src/chain.cc.o -c /home/usuario/CyA/Practicas/p06_automata_simulator/src/chain.cc",
+  "file": "/home/usuario/CyA/Practicas/p06_automata_simulator/src/chain.cc",
+  "output": "CMakeFiles/p06_automata_simulator.dir/src/chain.cc.o"
+},
+{
+  "directory": "/home/usuario/CyA/build",
+  "command": "/usr/bin/c++  -I/home/usuario/CyA/Practicas/p06_automata_simulator/src -g -O0 -Wall -Wextra -Wpedantic -Weffc++ -std=gnu++17 -Wall -Wextra -Wpedantic -Weffc++ -o CMakeFiles/p06_automata_simulator.dir/src/state.cc.o -c /home/usuario/CyA/Practicas/p06_automata_simulator/src/state.cc",
+  "file": "/home/usuario/CyA/Practicas/p06_automata_simulator/src/state.cc",
+  "output": "CMakeFiles/p06_automata_simulator.dir/src/state.cc.o"
+},
+{
+  "directory": "/home/usuario/CyA/build",
+  "command": "/usr/bin/c++  -I/home/usuario/CyA/Practicas/p06_automata_simulator/src -g -O0 -Wall -Wextra -Wpedantic -Weffc++ -std=gnu++17 -Wall -Wextra -Wpedantic -Weffc++ -o CMakeFiles/p06_automata_simulator.dir/src/automata_loader.cc.o -c /home/usuario/CyA/Practicas/p06_automata_simulator/src/automata_loader.cc",
+  "file": "/home/usuario/CyA/Practicas/p06_automata_simulator/src/automata_loader.cc",
+  "output": "CMakeFiles/p06_automata_simulator.dir/src/automata_loader.cc.o"
+}
+]
