@@ -1,0 +1,1 @@
+/usr/bin/c++ -rdynamic CMakeFiles/p06_automata_simulator.dir/src/main.cc.o CMakeFiles/p06_automata_simulator.dir/src/functions.cc.o CMakeFiles/p06_automata_simulator.dir/src/automaton.cc.o CMakeFiles/p06_automata_simulator.dir/src/alphabet.cc.o CMakeFiles/p06_automata_simulator.dir/src/automaton_loader.cc.o -o p06_automata_simulator 

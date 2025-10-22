@@ -132,7 +132,11 @@ void Automaton::ExportRegularGrammar() {
     output_file << "\n" << num_states_ << "\n" << starter_state_ << "\n";
     for(auto state : states_) {
       for(auto transition : state.second.getTransitions()) {
-        output_file << static_cast<char>('A' + state.second.getState()) << " -> " << transition.first << static_cast<char>('A' + transition.second) << "\n";
+        output_file << static_cast<char>('A' + state.second.getState()) << " -> " << transition.first << static_cast<char>('A' + transition.second);
+        if(states_.at(state.first).getIsAceptation()) {
+          output_file << " | ε";
+        }
+        output_file << "\n";
       }
     }
   } else {
