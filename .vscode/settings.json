@@ -1,3 +1,4 @@
 {
-  "cmake.sourceDirectory": "/home/ezehdeez/2/CyA25-26/Practicas/p06_automata_simulator"
+  "cmake.sourceDirectory": "/home/ezehdeez/2/CyA25-26/Practicas/p06_automata_simulator",
+  "cmake.ignoreCMakeListsMissing": true
 }

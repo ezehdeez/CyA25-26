@@ -1,3 +1,0 @@
-/home/usuario/CyA/build/CMakeFiles/p06_automata_simulator.dir
-/home/usuario/CyA/build/CMakeFiles/edit_cache.dir
-/home/usuario/CyA/build/CMakeFiles/rebuild_cache.dir
