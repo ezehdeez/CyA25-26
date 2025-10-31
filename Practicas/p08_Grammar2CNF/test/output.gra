@@ -1,0 +1,22 @@
+Alphabet: {a, b, c}
+Non terminal symbols: D1 D2 D3 S X Y 
+Starter symbol: S
+Productions: 
+	Ca -> a
+	Cb -> b
+	D1 -> CbX
+	D2 -> XD1
+	D3 -> XCb
+	S -> CaD2
+	S -> CaD1
+	S -> CaD3
+	S -> CaCb
+	X -> CaY
+	X -> CbY
+	X -> a
+	X -> b
+	Y -> CaY
+	Y -> CbY
+	Y -> a
+	Y -> b
+	Y -> c
