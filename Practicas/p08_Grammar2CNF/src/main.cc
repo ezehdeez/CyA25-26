@@ -3,7 +3,8 @@
  * Escuela Superior de Ingeniería y Tecnología
  * Grado en Ingeniería Informática
  * 
- * @subject: 
+ * @subject: CyA 25-26
+ *           P08 - Gramáticas en Forma Normal de Chomsky
  * 
  * @file main.cc
  * @author Ezequiel Hernández Poleo (alu0101735399@ull.edu.es)

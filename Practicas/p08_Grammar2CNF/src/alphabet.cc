@@ -4,11 +4,11 @@
  * Grado en Ingeniería Informática
  * 
  * @subject: CyA 25-26
- *           P06 - Diseño e implemetación de un simulador de autómatas finitos
+ *           P08 - Gramáticas en Forma Normal de Chomsky
  * 
  * @file alphabet.cc
  * @author Ezequiel Hernández Poleo (alu0101735399@ull.edu.es)
- * @date 2025-10-16
+ * @date 2025-10-29
  * @brief Alphabet class inicialization
  */
 
@@ -19,6 +19,11 @@
 
 typedef char symbol;
 
+/**
+ * @brief Construct a new Alphabet:: Alphabet object
+ * 
+ * @param alphabet 
+ */
 Alphabet::Alphabet(const std::string& alphabet) {
   for(size_t i = 0; i < alphabet.size(); i++) {
     if(alphabet[i] != ' ' && alphabet[i] != '&') {

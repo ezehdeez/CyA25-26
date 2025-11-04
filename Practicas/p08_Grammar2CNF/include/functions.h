@@ -4,11 +4,11 @@
  * Grado en Ingeniería Informática
  * 
  * @subject: CyA 25-26
- *           P06 - Diseño e implemetación de un simulador de autómatas finitos
+ *           P08 - Gramáticas en Forma Normal de Chomsky
  * 
  * @file functions.h
  * @author Ezequiel Hernández Poleo (alu0101735399@ull.edu.es)
- * @date 2025-10-16
+ * @date 2025-10-29
  * @brief Functions declarations.
  */
 

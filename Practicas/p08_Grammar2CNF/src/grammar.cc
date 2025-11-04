@@ -3,12 +3,13 @@
  * Escuela Superior de Ingeniería y Tecnología
  * Grado en Ingeniería Informática
  * 
- * @subject: 
+ * @subject: CyA 25-26
+ *           P08 - Gramáticas en Forma Normal de Chomsky
  * 
  * @file grammar.cc
  * @author Ezequiel Hernández Poleo (alu0101735399@ull.edu.es)
  * @date 2025-10-30
- * @brief 
+ * @brief Grammar class declaration
  */
 
 #include <cassert>
@@ -16,6 +17,11 @@
 
 #include "../include/grammar.h"
 
+/**
+ * @brief 
+ * 
+ * @return bool 
+ */
 bool Grammar::NoEmptyProduction() {
   for(auto production : productions_) {
     if(production.second == "&") return false;
@@ -23,6 +29,11 @@ bool Grammar::NoEmptyProduction() {
   return true;
 }
 
+/**
+ * @brief 
+ * 
+ * @return bool 
+ */
 bool Grammar::NoUnitProduction() {
   for(auto production : productions_) {
     if(production.second.size() == 1 && !alphabet_.CheckSymbol(production.second[0])) return false;
@@ -30,6 +41,11 @@ bool Grammar::NoUnitProduction() {
   return true;
 }
 
+/**
+ * @brief 
+ * 
+ * @return bool 
+ */
 bool Grammar::NoEmptyORUnitProductions() {
   for(auto production : productions_) {
     if((production.second.size() == 1 && !alphabet_.CheckSymbol(production.second[0])) || production.second == "&") return false;
@@ -37,6 +53,18 @@ bool Grammar::NoEmptyORUnitProductions() {
   return true;
 }
 
+/**
+ * @brief CNF Algorithm implemented and separated in 2 different stages, the first
+ *        one which creates a C[] production for every symbol used in the production
+ *        and substitute the appearances of those symbols with C[] production.
+ *        And the second stage which uses a stack to constantly merge the very 
+ *        last 2 non terminal symbols and substitute them with a D[] production.
+ *        The stack implementation could not be the best one, but a stack was
+ *        the first data structure that came into my head when I saw how the non
+ *        terminal symbols were being merged from the right to the left.
+ * 
+ * @return Grammar 
+ */
 Grammar Grammar::ChomskyNormalForm() {
   assert(!NoEmptyORUnitProductions());
   Grammar grammar{*this};
@@ -136,6 +164,13 @@ Grammar Grammar::ChomskyNormalForm() {
   return cnf_grammar;
 }
 
+/**
+ * @brief << Operator overloading
+ * 
+ * @param out 
+ * @param grammar 
+ * @return std::ostream& 
+ */
 std::ostream& operator<<(std::ostream& out, const Grammar& grammar) {
   out << "Alphabet: " << grammar.getAlphabet() << std::endl;
   out << "Non terminal symbols: ";

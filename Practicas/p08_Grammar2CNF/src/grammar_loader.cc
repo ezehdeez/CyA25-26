@@ -3,12 +3,13 @@
  * Escuela Superior de Ingeniería y Tecnología
  * Grado en Ingeniería Informática
  * 
- * @subject: 
+ * @subject: CyA 25-26
+ *           P08 - Gramáticas en Forma Normal de Chomsky
  * 
  * @file grammar_loader.cc
  * @author Ezequiel Hernández Poleo (alu0101735399@ull.edu.es)
  * @date 2025-10-29
- * @brief 
+ * @brief Grammar Loader class declaration
  */
 
 #include <fstream>
@@ -16,6 +17,13 @@
 
 #include "../include/grammar_loader.h"
 
+/**
+ * @brief This method uses string stream and file stream to extract from the .gra
+ *        file the information that's going to be stored in GrammarData. 
+ * 
+ * @param file_name 
+ * @return GrammarLoader::GrammarData 
+ */
 GrammarLoader::GrammarData GrammarLoader::Loader(const std::string& file_name) {
   std::ifstream input_file{file_name};
   std::string line;

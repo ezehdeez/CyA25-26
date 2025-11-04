@@ -4,11 +4,11 @@
  * Grado en Ingeniería Informática
  * 
  * @subject: CyA 25-26
- *           P08 - 
+ *           P08 - Gramáticas en Forma Normal de Chomsky
  * 
  * @file alphabet.h
  * @author Ezequiel Hernández Poleo (alu0101735399@ull.edu.es)
- * @date 2025-10-16
+ * @date 2025-10-29
  * @brief Alphabet class declaration as a set of symbols (chars) that's used
  *        for chain representation.
  */
@@ -31,6 +31,10 @@ class Alphabet {
   bool CheckSymbol(symbol symbol);
   void InsertSymbol(symbol s) {alphabet_.insert(s);}
  private:
+  /**
+   * @brief alphabet_ being a set of symbols as its formal definition.
+   * 
+   */
   std::set<symbol> alphabet_;
 };
 

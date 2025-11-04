@@ -3,12 +3,14 @@
  * Escuela Superior de Ingeniería y Tecnología
  * Grado en Ingeniería Informática
  * 
- * @subject: 
+ * @subject: CyA 25-26
+ *           P08 - Gramáticas en Forma Normal de Chomsky
  * 
  * @file grammar_loader.h
  * @author Ezequiel Hernández Poleo (alu0101735399@ull.edu.es)
  * @date 2025-10-29
- * @brief 
+ * @brief Grammar Loader class declaration used to extract the information from
+ *        a .gra file to be used for Grammar objects creation.
  */
 
 #pragma once
