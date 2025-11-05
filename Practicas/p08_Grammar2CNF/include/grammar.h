@@ -45,6 +45,10 @@ class Grammar{
 
   // CNF
   Grammar ChomskyNormalForm();
+
+  //Modi
+    std::set<NTSymbol> GeneratingNonTerminal() const;
+
  private:
   /**
    * @brief Alphabet used for storing the terminal symbols of the grammar.

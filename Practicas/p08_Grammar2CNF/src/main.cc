@@ -30,17 +30,10 @@ int main(int argc, char* argv[]) {
   Grammar grammar(data.alphabet_, data.non_terminal_symbols_, data.start_symbol_, data.productions_);
   std::ofstream output_file{argv[2]};
   output_file << grammar.ChomskyNormalForm();
-  std::cout << "### DEPURACION: GRAMMAR DATA ###" << std::endl;
-  std::cout << "Alphabet: " << data.alphabet_ << std::endl;
-  std::cout << "Non Terminal Symbols: ";
-  for(auto symbol : data.non_terminal_symbols_) {
+  std::set<NTSymbol> generating_non_terminals = grammar.GeneratingNonTerminal();
+  for(NTSymbol symbol : generating_non_terminals) {
     std::cout << symbol << " ";
   }
-  std::cout << std::endl;
-  std::cout << "Start Symbol: " << data.start_symbol_ << std::endl;
-  std::cout << "Productions: ";
-  for(auto symbol : data.productions_) {
-    std::cout << symbol.first << "->" << symbol.second << " ";
-  }
-  std::cout << std::endl;
+  std::cout << "\n";
+  return 0;
 }

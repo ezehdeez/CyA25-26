@@ -14,6 +14,7 @@
 
 #include <cassert>
 #include <stack>
+#include <set>
 
 #include "../include/grammar.h"
 
@@ -184,4 +185,32 @@ std::ostream& operator<<(std::ostream& out, const Grammar& grammar) {
     out << "\t" << production.first << " -> " << production.second << std::endl;
   }
   return out;
+}
+
+std::set<NTSymbol> Grammar::GeneratingNonTerminal() const {
+  std::set<NTSymbol> generating_non_terminal;
+  bool changes = true;
+  while(changes) {
+    changes = false;
+    for(auto production : productions_) {
+      if(generating_non_terminal.count(production.first) == 0) {
+        bool full_non_terminal = true;
+        for(char c : production.second) {
+          if(islower(c)) {
+            continue;
+          }
+          std::string symbol(1, c);
+          if(generating_non_terminal.count(symbol) == 0) {
+            full_non_terminal = false;
+            break;
+          }
+        }
+        if(full_non_terminal) {
+          generating_non_terminal.insert(production.first);
+          changes = true;
+        } 
+      }
+    }
+  }
+  return generating_non_terminal;
 }
